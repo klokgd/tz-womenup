@@ -4,7 +4,7 @@ const schema = new Schema({
     name: String,
     email: String,
     password: String,
-    taskList: [{
+    todoList: [{
         type: Types.objectId,
         ref: "todo"
     }]

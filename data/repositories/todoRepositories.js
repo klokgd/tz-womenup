@@ -1,21 +1,23 @@
 import {todoModel} from "../models/todo.js";
 
-export function create(data){
-    todoModel.create(data);
+export async function create(data) {
+    await todoModel.create(data);
 }
 
-export function update(data){
-    todoModel.findByIdAndUpdate(data);
+export async function update(id, data) {
+    await todoModel.findByIdAndUpdate(id, data);
 }
 
-export function safeDelete(data){
-    todoModel.findByIdAndUpdate();
+export async function safeDelete(id) {
+    await todoModel.findByIdAndUpdate(id, {
+        isDeleted: true
+    });
 }
 
-export function getAll(){
+export async function getAll() {
     return todoModel.find();
 }
 
-export function getById(id){
+export async function getById(id){
     return todoModel.findById(id);
 }

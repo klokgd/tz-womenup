@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+import {model, Schema} from "mongoose";
 
 const schema = new Schema({
     description: String,
@@ -10,7 +10,7 @@ const schema = new Schema({
         type: Boolean,
         default: false
     },
-    isDelete: {
+    isDeleted: {
         type: Boolean,
         default: false
     }
